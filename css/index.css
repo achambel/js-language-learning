@@ -1,0 +1,88 @@
+body {
+ background: #2a2a2a;
+ color: #00b5ad;
+}
+
+div {
+  margin: 5px;
+}
+
+#repetitions {
+  width: 40px;
+}
+
+#data p {
+  cursor: pointer;
+  font-family: monospace;
+}
+
+.current-time {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  border-radius: 3px;
+  font-size: x-large;
+}
+
+#wrap {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#controls {
+  float: left;
+  color: #00b5ad;
+  border-radius: 10px;
+  border: 1px solid #00b5ad;
+}
+
+#main {
+  float: left;
+  background: #00b5ad;
+  border-radius: 10px;
+  color: #2a2a2a;
+  width: 500px;
+}
+
+#recognition {
+  float: right;
+  font-family: monospace;
+  background: #00b5ad;
+  border-radius: 10px;
+  color: #2a2a2a;
+  width: 15%;
+}
+
+.progress {
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+  margin: 1px;
+  max-width: 100%;
+  height: 16px;
+  border-radius: 4px;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.part1 {
+  background: #f27011;
+}
+
+.part2 {
+  background: #f2b01e;
+}
+
+.part3 {
+  background: #f2d31b;
+}
+
+.part4 {
+  background: #86e01e;
+}

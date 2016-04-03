@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+
+</body>
+<div id="wrap">
+  <div id="controls">
+    <div>
+      <label for="repetitions">Repetitions: </label>
+      <input id="repetitions" type="number" min="0" value="20">
+    </div>
+
+    <div>
+      <select id="selectAudio">
+        <option value="">Select any audio</option>
+        <option value="01-module/M01V03 - MLBOR - Part 1 - Jake Glazier.mp3">Module 1 - My  Lord   Bag of Rice</option>
+      </select>
+    </div>
+
+    <div>
+      <audio id="audio" src="" controls>
+        <track kind="subtitles" src="tracks/MLBOR.vtt" srclang="en" default>
+        <em><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
+      </audio>
+    </div>
+
+    <div>
+      <label style="display: block;">Work progress: </label>
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <ol id="resume"></ol>
+    </div>
+  </div>
+
+  <div id="main">
+    <div id="data">
+      <h1>Welcome to the English Audio Track!</h1>
+      <h3>Please, select some audio to start.</h3>
+    </div>
+  </div>
+
+  <div id="recognition">
+      <button onclick="speech();" style="margin: 5px;">Pronounce</button>
+      <div id="transcript"></div>
+  </div>
+
+</div>
+<script src="js/eng.js"></script>
+</html>
