@@ -13,18 +13,21 @@
     <div>
       <label for="repetitions">Repetitions: </label>
       <input id="repetitions" type="number" min="0" value="20">
+      <label for="hideText">Only audio</label>
+      <input id="hideText" type="checkbox">
     </div>
 
     <div>
       <select id="selectAudio">
         <option value="">Select any audio</option>
-        <option value="01-module/M01V03 - MLBOR - Part 1 - Jake Glazier.mp3">Module 1 - My  Lord   Bag of Rice</option>
+        <option value="01-module/M01V03 - MLBOR - Part 1 - Jake Glazier.mp3">mlbor-part-01</option>
+        <option value="02-module/M02V10 - MLBOR - Part 2 - Jake Glazier.mp3">mlbor-part-02</option>
+        <option value="02-module/M02V12 - MLBOR - Part 3 - Jake Glazier.mp3">mlbor-part-03</option>
       </select>
     </div>
 
     <div>
       <audio id="audio" src="" controls>
-        <track kind="subtitles" src="tracks/MLBOR.vtt" srclang="en" default>
         <em><strong>Error:</strong> Your browser doesn't appear to support HTML5 Audio.</em>
       </audio>
     </div>

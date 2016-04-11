@@ -1,6 +1,8 @@
 let repetitions = document.getElementById('repetitions');
+let hideText = document.getElementById('hideText');
 let selectAudio = document.getElementById('selectAudio');
 let audio = document.getElementById('audio');
+let track = document.createElement('track');
 let data = document.getElementById('data');
 let progressBar = document.querySelector('.progress-bar');
 let ol = document.getElementById('resume');
@@ -10,6 +12,20 @@ selectAudio.addEventListener('change', function(){
   data.innerHTML = '';
   audio.loop = false;
   audio.src = this.value;
+
+  track.setAttribute('kind', 'subtitles');
+  track.setAttribute('srclang', 'en');
+  track.setAttribute('default', 'default');
+  track.setAttribute('src', `tracks/${this.selectedOptions[0].textContent}.vtt`);
+  audio.appendChild(track);
+
+  audio.textTracks[0].oncuechange = function() {
+    var cue = this.activeCues[0]; // assuming there is only one active cue
+    if(cue){
+      current(cue.id);
+    }
+  };
+
   counter = repetitions.value;
 });
 
@@ -30,18 +46,10 @@ function showInfo() {
   ol.appendChild(li);
 }
 
-
-audio.textTracks[0].oncuechange = function() {
-  var cue = this.activeCues[0]; // assuming there is only one active cue
-  if(cue){
-    current(cue.id);
-  }
-};
-
 audio.onloadeddata = function() {
   let cues = audio.textTracks[0].cues;
 
-  if(cues) {
+  if(cues && !hideText.checked) {
     for(let i = 0; i < cues.length; i++) {
       let begin = cues[i].startTime;
       let end = cues[i].endTime;
