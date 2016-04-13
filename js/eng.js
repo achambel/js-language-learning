@@ -21,7 +21,7 @@ selectAudio.addEventListener('change', function(){
 
   audio.textTracks[0].oncuechange = function() {
     var cue = this.activeCues[0]; // assuming there is only one active cue
-    if(cue){
+    if(cue && !hideText.checked){
       current(cue.id);
     }
   };
@@ -137,5 +137,12 @@ function speech() {
   recognition.onspeechend = function() {
     btnSpeech.removeAttribute('disabled');
     btnSpeech.textContent = 'Pronounce';
+  }
+}
+
+// play/pause when press space bar
+window.onkeypress = function(event) {
+  if(event.keyCode == 32) {
+    audio.paused ? audio.play() : audio.pause();
   }
 }
