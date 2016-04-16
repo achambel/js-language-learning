@@ -7,6 +7,10 @@ div {
   margin: 5px;
 }
 
+.hide {
+  display: none;
+}
+
 #repetitions {
   width: 40px;
 }

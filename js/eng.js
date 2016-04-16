@@ -8,6 +8,10 @@ let progressBar = document.querySelector('.progress-bar');
 let ol = document.getElementById('resume');
 let counter = 0;
 
+hideText.onclick = function() {
+  document.querySelector('#main').classList.toggle('hide');
+}
+
 selectAudio.addEventListener('change', function(){
   data.innerHTML = '';
   audio.loop = false;
@@ -21,7 +25,7 @@ selectAudio.addEventListener('change', function(){
 
   audio.textTracks[0].oncuechange = function() {
     var cue = this.activeCues[0]; // assuming there is only one active cue
-    if(cue && !hideText.checked){
+    if(cue){
       current(cue.id);
     }
   };
@@ -49,7 +53,7 @@ function showInfo() {
 audio.onloadeddata = function() {
   let cues = audio.textTracks[0].cues;
 
-  if(cues && !hideText.checked) {
+  if(cues) {
     for(let i = 0; i < cues.length; i++) {
       let begin = cues[i].startTime;
       let end = cues[i].endTime;
